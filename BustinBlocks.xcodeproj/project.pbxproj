@@ -490,6 +490,7 @@
 				CAE7E3A01824E25000A82831 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CAE7E3A11824E25000A82831 /* Build configuration list for PBXNativeTarget "BustinBlocksTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +499,7 @@
 				CAE7E3A31824E25000A82831 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
