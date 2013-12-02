@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA60F672184C61A30013E43D /* MenuBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = CA60F671184C61A30013E43D /* MenuBackground.png */; };
+		CA60F674184C75200013E43D /* MainLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CA60F673184C75200013E43D /* MainLogo.png */; };
 		CAE7E3661824E24F00A82831 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE7E3651824E24F00A82831 /* Foundation.framework */; };
 		CAE7E3681824E24F00A82831 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE7E3671824E24F00A82831 /* CoreGraphics.framework */; };
 		CAE7E36A1824E24F00A82831 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE7E3691824E24F00A82831 /* UIKit.framework */; };
@@ -17,7 +19,7 @@
 		CAE7E37B1824E24F00A82831 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAE7E3791824E24F00A82831 /* Main_iPhone.storyboard */; };
 		CAE7E37E1824E24F00A82831 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAE7E37C1824E24F00A82831 /* Main_iPad.storyboard */; };
 		CAE7E3811824E24F00A82831 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE7E3801824E24F00A82831 /* ViewController.m */; };
-		CAE7E3841824E24F00A82831 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE7E3831824E24F00A82831 /* MyScene.m */; };
+		CAE7E3841824E24F00A82831 /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE7E3831824E24F00A82831 /* MenuScene.m */; };
 		CAE7E3861824E24F00A82831 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = CAE7E3851824E24F00A82831 /* Spaceship.png */; };
 		CAE7E3881824E24F00A82831 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAE7E3871824E24F00A82831 /* Images.xcassets */; };
 		CAE7E38F1824E25000A82831 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE7E38E1824E25000A82831 /* XCTest.framework */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA60F671184C61A30013E43D /* MenuBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuBackground.png; sourceTree = "<group>"; };
+		CA60F673184C75200013E43D /* MainLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainLogo.png; sourceTree = "<group>"; };
 		CAE7E3621824E24F00A82831 /* BustinBlocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BustinBlocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAE7E3651824E24F00A82831 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CAE7E3671824E24F00A82831 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,8 +57,8 @@
 		CAE7E37D1824E24F00A82831 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		CAE7E37F1824E24F00A82831 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		CAE7E3801824E24F00A82831 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		CAE7E3821824E24F00A82831 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
-		CAE7E3831824E24F00A82831 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
+		CAE7E3821824E24F00A82831 /* MenuScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
+		CAE7E3831824E24F00A82831 /* MenuScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuScene.m; sourceTree = "<group>"; };
 		CAE7E3851824E24F00A82831 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		CAE7E3871824E24F00A82831 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CAE7E38D1824E25000A82831 /* BustinBlocksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BustinBlocksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +93,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA60F66F184C5F6C0013E43D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				CA60F670184C5F7C0013E43D /* Backgrounds */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		CA60F670184C5F7C0013E43D /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				CA60F673184C75200013E43D /* MainLogo.png */,
+				CA60F671184C61A30013E43D /* MenuBackground.png */,
+			);
+			name = Backgrounds;
+			sourceTree = "<group>";
+		};
 		CAE7E3591824E24F00A82831 = {
 			isa = PBXGroup;
 			children = (
@@ -123,14 +144,15 @@
 		CAE7E36D1824E24F00A82831 /* BustinBlocks */ = {
 			isa = PBXGroup;
 			children = (
+				CA60F66F184C5F6C0013E43D /* Assets */,
 				CAE7E3761824E24F00A82831 /* AppDelegate.h */,
 				CAE7E3771824E24F00A82831 /* AppDelegate.m */,
 				CAE7E3791824E24F00A82831 /* Main_iPhone.storyboard */,
 				CAE7E37C1824E24F00A82831 /* Main_iPad.storyboard */,
 				CAE7E37F1824E24F00A82831 /* ViewController.h */,
 				CAE7E3801824E24F00A82831 /* ViewController.m */,
-				CAE7E3821824E24F00A82831 /* MyScene.h */,
-				CAE7E3831824E24F00A82831 /* MyScene.m */,
+				CAE7E3821824E24F00A82831 /* MenuScene.h */,
+				CAE7E3831824E24F00A82831 /* MenuScene.m */,
 				CAE7E3851824E24F00A82831 /* Spaceship.png */,
 				CAE7E3871824E24F00A82831 /* Images.xcassets */,
 				CAE7E36E1824E24F00A82831 /* Supporting Files */,
@@ -245,8 +267,10 @@
 			files = (
 				CAE7E3861824E24F00A82831 /* Spaceship.png in Resources */,
 				CAE7E3881824E24F00A82831 /* Images.xcassets in Resources */,
+				CA60F672184C61A30013E43D /* MenuBackground.png in Resources */,
 				CAE7E37E1824E24F00A82831 /* Main_iPad.storyboard in Resources */,
 				CAE7E37B1824E24F00A82831 /* Main_iPhone.storyboard in Resources */,
+				CA60F674184C75200013E43D /* MainLogo.png in Resources */,
 				CAE7E3721824E24F00A82831 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAE7E3841824E24F00A82831 /* MyScene.m in Sources */,
+				CAE7E3841824E24F00A82831 /* MenuScene.m in Sources */,
 				CAE7E3811824E24F00A82831 /* ViewController.m in Sources */,
 				CAE7E3781824E24F00A82831 /* AppDelegate.m in Sources */,
 				CAE7E3741824E24F00A82831 /* main.m in Sources */,
