@@ -14,6 +14,7 @@
 		CA60F684184C7A710013E43D /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA60F683184C7A710013E43D /* GameViewController.m */; };
 		CAE0757D184DF080004990FE /* Block.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE0757C184DF080004990FE /* Block.m */; };
 		CAE07580184DF1B8004990FE /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE0757F184DF1B8004990FE /* Grid.m */; };
+		CAE07583184DF8C7004990FE /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE07582184DF8C7004990FE /* Game.m */; };
 		CAE7E3661824E24F00A82831 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE7E3651824E24F00A82831 /* Foundation.framework */; };
 		CAE7E3681824E24F00A82831 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE7E3671824E24F00A82831 /* CoreGraphics.framework */; };
 		CAE7E36A1824E24F00A82831 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE7E3691824E24F00A82831 /* UIKit.framework */; };
@@ -58,6 +59,8 @@
 		CAE0757C184DF080004990FE /* Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Block.m; sourceTree = "<group>"; };
 		CAE0757E184DF1B8004990FE /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
 		CAE0757F184DF1B8004990FE /* Grid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grid.m; sourceTree = "<group>"; };
+		CAE07581184DF8C7004990FE /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		CAE07582184DF8C7004990FE /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		CAE7E3621824E24F00A82831 /* BustinBlocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BustinBlocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAE7E3651824E24F00A82831 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CAE7E3671824E24F00A82831 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -163,6 +166,8 @@
 				CAE0757C184DF080004990FE /* Block.m */,
 				CAE0757E184DF1B8004990FE /* Grid.h */,
 				CAE0757F184DF1B8004990FE /* Grid.m */,
+				CAE07581184DF8C7004990FE /* Game.h */,
+				CAE07582184DF8C7004990FE /* Game.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAE07583184DF8C7004990FE /* Game.m in Sources */,
 				CAE7E3841824E24F00A82831 /* MenuScene.m in Sources */,
 				CAE7E3811824E24F00A82831 /* MenuViewController.m in Sources */,
 				CA60F67A184C78DC0013E43D /* GameScene.m in Sources */,

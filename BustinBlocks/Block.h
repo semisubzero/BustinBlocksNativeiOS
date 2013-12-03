@@ -16,4 +16,7 @@
 
 -(id)initWithColor:(NSString *)color withStyle:(NSString *)style;
 
++(NSArray *)validColors;
++(NSArray *)validStyles;
+
 @end

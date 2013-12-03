@@ -22,4 +22,12 @@
     return self;
 }
 
++(NSArray *)validColors{
+    return @[@"Blue",@"Green",@"Red",@"Yellow"];
+}
+
++(NSArray *)validStyles{
+    return @[@"Default"];
+}
+
 @end

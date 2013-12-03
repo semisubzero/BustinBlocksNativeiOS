@@ -10,14 +10,21 @@
 
 // Lets compiler know that there is a class called block
 @class Block;
+@class Game;
 
 @interface Grid : NSObject
 
 // Contains all blocks inside the grid
-@property NSArray *blockArray;
+@property NSMutableArray *blockArray;
+
+//Contains bag of unspawned blocks
+@property NSMutableArray *blockBag;
 
 // The offset of the scrolling blocks to the grid location
 @property int blockOffset;
+
+// Shared instance of the Game class
+@property Game *game;
 
 // Overrides default initializer so we can setup our array
 -(id)init;
@@ -36,5 +43,11 @@
 
 // Moves a block to a new index based on touch location
 -(BOOL)moveBlockID:(int)blockID toPoint:(CGPoint)touchLocation;
+
+// Checks to see if bag of blocks is empty
+-(BOOL)isBagEmpty;
+
+// Refills bag of blocks
+-(void)refillBag;
 
 @end
