@@ -10,6 +10,8 @@
 
 @interface MenuScene : SKScene
 
+@property int backgroundMoveSpeed;
+
 @property SKSpriteNode *backgroundSprite;
 @property SKSpriteNode *backgroundSprite2;
 

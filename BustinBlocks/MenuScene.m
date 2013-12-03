@@ -15,20 +15,34 @@
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:CGSizeMake(size.height, size.width)]) {
-        /* Setup your scene here */
         
+        // Set background color
         self.backgroundColor = [SKColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1.0];
         
+        // Speed (in seconds) at which the background moves across the screen once
+        self.backgroundMoveSpeed = 2;
+        
+        // Initialize the background sprites
         self.backgroundSprite = [SKSpriteNode spriteNodeWithImageNamed:@"MenuBackground.png"];
         self.backgroundSprite2 = [SKSpriteNode spriteNodeWithImageNamed:@"MenuBackground.png"];
         
-        // Initialize the background sprites
         self.backgroundSprite.anchorPoint = CGPointMake(0, 0);
         self.backgroundSprite.position = CGPointMake(0,0);
         [self addChild:self.backgroundSprite];
+        
         self.backgroundSprite2.anchorPoint = CGPointMake(0, 0);
         self.backgroundSprite2.position = CGPointMake(self.backgroundSprite.size.width, 0);
         [self addChild:self.backgroundSprite2];
+        
+        // Move left actions
+        SKAction *bg1_move = [SKAction moveByX:self.backgroundSprite.position.x - 480 y:0 duration:self.backgroundMoveSpeed];
+        SKAction *bg2_move = [SKAction moveByX:self.backgroundSprite2.position.x - 480 y:0 duration:self.backgroundMoveSpeed];
+        
+        SKAction *bg1_scroll = [SKAction repeatActionForever:bg1_move];
+        SKAction *bg2_scroll = [SKAction repeatActionForever:bg2_move];
+        
+        //[self.backgroundSprite runAction:bg1_scroll];
+        //[self.backgroundSprite2 runAction:bg2_scroll];
         
     }
     return self;

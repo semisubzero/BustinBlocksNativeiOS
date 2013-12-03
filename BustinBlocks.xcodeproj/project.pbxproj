@@ -15,6 +15,10 @@
 		CAE0757D184DF080004990FE /* Block.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE0757C184DF080004990FE /* Block.m */; };
 		CAE07580184DF1B8004990FE /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE0757F184DF1B8004990FE /* Grid.m */; };
 		CAE07583184DF8C7004990FE /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE07582184DF8C7004990FE /* Game.m */; };
+		CAE0758A184E0C11004990FE /* Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CAE07589184E0C11004990FE /* Blue.png */; };
+		CAE0758C184E0C1B004990FE /* Green.png in Resources */ = {isa = PBXBuildFile; fileRef = CAE0758B184E0C1B004990FE /* Green.png */; };
+		CAE0758E184E0C23004990FE /* Red.png in Resources */ = {isa = PBXBuildFile; fileRef = CAE0758D184E0C23004990FE /* Red.png */; };
+		CAE07590184E0C2D004990FE /* Yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = CAE0758F184E0C2D004990FE /* Yellow.png */; };
 		CAE7E3661824E24F00A82831 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE7E3651824E24F00A82831 /* Foundation.framework */; };
 		CAE7E3681824E24F00A82831 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE7E3671824E24F00A82831 /* CoreGraphics.framework */; };
 		CAE7E36A1824E24F00A82831 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE7E3691824E24F00A82831 /* UIKit.framework */; };
@@ -61,6 +65,10 @@
 		CAE0757F184DF1B8004990FE /* Grid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grid.m; sourceTree = "<group>"; };
 		CAE07581184DF8C7004990FE /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		CAE07582184DF8C7004990FE /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		CAE07589184E0C11004990FE /* Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue.png; sourceTree = "<group>"; };
+		CAE0758B184E0C1B004990FE /* Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Green.png; sourceTree = "<group>"; };
+		CAE0758D184E0C23004990FE /* Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Red.png; sourceTree = "<group>"; };
+		CAE0758F184E0C2D004990FE /* Yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Yellow.png; sourceTree = "<group>"; };
 		CAE7E3621824E24F00A82831 /* BustinBlocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BustinBlocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAE7E3651824E24F00A82831 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CAE7E3671824E24F00A82831 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -135,6 +143,7 @@
 		CA60F67B184C79E90013E43D /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				CAE07584184E0BE8004990FE /* Blocks */,
 				CAEBD628184DE75000736B46 /* Objects */,
 				CAEBD620184DD19D00736B46 /* Buttons */,
 				CA60F681184C7A330013E43D /* BackgroundGrids */,
@@ -170,6 +179,49 @@
 				CAE07582184DF8C7004990FE /* Game.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		CAE07584184E0BE8004990FE /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				CAE07588184E0BFE004990FE /* Yellow */,
+				CAE07587184E0BF9004990FE /* Green */,
+				CAE07586184E0BF4004990FE /* Blue */,
+				CAE07585184E0BEE004990FE /* Red */,
+			);
+			name = Blocks;
+			sourceTree = "<group>";
+		};
+		CAE07585184E0BEE004990FE /* Red */ = {
+			isa = PBXGroup;
+			children = (
+				CAE0758D184E0C23004990FE /* Red.png */,
+			);
+			name = Red;
+			sourceTree = "<group>";
+		};
+		CAE07586184E0BF4004990FE /* Blue */ = {
+			isa = PBXGroup;
+			children = (
+				CAE07589184E0C11004990FE /* Blue.png */,
+			);
+			name = Blue;
+			sourceTree = "<group>";
+		};
+		CAE07587184E0BF9004990FE /* Green */ = {
+			isa = PBXGroup;
+			children = (
+				CAE0758B184E0C1B004990FE /* Green.png */,
+			);
+			name = Green;
+			sourceTree = "<group>";
+		};
+		CAE07588184E0BFE004990FE /* Yellow */ = {
+			isa = PBXGroup;
+			children = (
+				CAE0758F184E0C2D004990FE /* Yellow.png */,
+			);
+			name = Yellow;
 			sourceTree = "<group>";
 		};
 		CAE7E3591824E24F00A82831 = {
@@ -348,7 +400,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA60F67D184C7A1B0013E43D /* DefaultBackgroundBorders.png in Resources */,
+				CAE0758C184E0C1B004990FE /* Green.png in Resources */,
 				CAEBD62A184DE78B00736B46 /* matchBox.png in Resources */,
+				CAE07590184E0C2D004990FE /* Yellow.png in Resources */,
 				CAE7E3881824E24F00A82831 /* Images.xcassets in Resources */,
 				CAEBD624184DE21800736B46 /* MenuBackground.png in Resources */,
 				CAEBD61F184DD19900736B46 /* PauseButton.png in Resources */,
@@ -356,6 +410,8 @@
 				CAE7E37E1824E24F00A82831 /* Main_iPad.storyboard in Resources */,
 				CAE7E37B1824E24F00A82831 /* Main_iPhone.storyboard in Resources */,
 				CA60F674184C75200013E43D /* MainLogo.png in Resources */,
+				CAE0758E184E0C23004990FE /* Red.png in Resources */,
+				CAE0758A184E0C11004990FE /* Blue.png in Resources */,
 				CAE7E3721824E24F00A82831 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
