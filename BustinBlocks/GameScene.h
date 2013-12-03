@@ -1,13 +1,13 @@
 //
-//  MenuScene.h
+//  GameScene.h
 //  BustinBlocks
 //
-
+//  Created by Brandon Ramirez on 12/2/13.
 //  Copyright (c) 2013 Semisubzero. All rights reserved.
 //
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface MenuScene : SKScene
+@interface GameScene : SKScene
 
 @end

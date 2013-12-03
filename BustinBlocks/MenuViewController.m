@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Semisubzero. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MenuViewController.h"
 #import "MenuScene.h"
 
-@implementation ViewController
-- (IBAction)PlayButton {
-}
+@implementation MenuViewController
+
 - (IBAction)StoreButton {
+    NSLog(@"Test");
 }
 - (IBAction)GameCenterButton {
 }
@@ -33,7 +33,7 @@
     
     // Create and configure the scene.
     SKScene * scene = [MenuScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
+    scene.scaleMode = SKSceneScaleModeAspectFit;
     
     // Present the scene.
     [skView presentScene:scene];

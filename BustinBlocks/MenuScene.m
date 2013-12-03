@@ -1,5 +1,5 @@
 //
-//  MyScene.m
+//  MenuScene.m
 //  BustinBlocks
 //
 //  Created by Brandon Ramirez on 11/2/13.
@@ -11,7 +11,7 @@
 @implementation MenuScene
 
 -(id)initWithSize:(CGSize)size {    
-    if (self = [super initWithSize:size]) {
+    if (self = [super initWithSize:CGSizeMake(size.height, size.width)]) {
         /* Setup your scene here */
         
         self.backgroundColor = [SKColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1.0];
