@@ -12,6 +12,7 @@
 		CA60F67D184C7A1B0013E43D /* DefaultBackgroundBorders.png in Resources */ = {isa = PBXBuildFile; fileRef = CA60F67C184C7A1B0013E43D /* DefaultBackgroundBorders.png */; };
 		CA60F67F184C7A220013E43D /* DefaultBackgroundGrid.png in Resources */ = {isa = PBXBuildFile; fileRef = CA60F67E184C7A220013E43D /* DefaultBackgroundGrid.png */; };
 		CA60F684184C7A710013E43D /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA60F683184C7A710013E43D /* GameViewController.m */; };
+		CAE0757D184DF080004990FE /* Block.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE0757C184DF080004990FE /* Block.m */; };
 		CAE7E3661824E24F00A82831 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE7E3651824E24F00A82831 /* Foundation.framework */; };
 		CAE7E3681824E24F00A82831 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE7E3671824E24F00A82831 /* CoreGraphics.framework */; };
 		CAE7E36A1824E24F00A82831 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE7E3691824E24F00A82831 /* UIKit.framework */; };
@@ -52,6 +53,8 @@
 		CA60F67E184C7A220013E43D /* DefaultBackgroundGrid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DefaultBackgroundGrid.png; sourceTree = "<group>"; };
 		CA60F682184C7A710013E43D /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		CA60F683184C7A710013E43D /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		CAE0757B184DF080004990FE /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
+		CAE0757C184DF080004990FE /* Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Block.m; sourceTree = "<group>"; };
 		CAE7E3621824E24F00A82831 /* BustinBlocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BustinBlocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAE7E3651824E24F00A82831 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CAE7E3671824E24F00A82831 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -150,6 +153,15 @@
 			name = BackgroundGrids;
 			sourceTree = "<group>";
 		};
+		CAE07579184DF058004990FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CAE0757B184DF080004990FE /* Block.h */,
+				CAE0757C184DF080004990FE /* Block.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		CAE7E3591824E24F00A82831 = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				CA60F66F184C5F6C0013E43D /* Assets */,
+				CAE07579184DF058004990FE /* Model */,
 				CAE7E3761824E24F00A82831 /* AppDelegate.h */,
 				CAE7E3771824E24F00A82831 /* AppDelegate.m */,
 				CAE7E3791824E24F00A82831 /* Main_iPhone.storyboard */,
@@ -356,6 +369,7 @@
 				CAE7E3811824E24F00A82831 /* MenuViewController.m in Sources */,
 				CA60F67A184C78DC0013E43D /* GameScene.m in Sources */,
 				CAE7E3781824E24F00A82831 /* AppDelegate.m in Sources */,
+				CAE0757D184DF080004990FE /* Block.m in Sources */,
 				CA60F684184C7A710013E43D /* GameViewController.m in Sources */,
 				CAE7E3741824E24F00A82831 /* main.m in Sources */,
 			);
