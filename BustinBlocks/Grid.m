@@ -16,6 +16,9 @@
     
     if (self = [super init]){
         
+        // Get shared instance of the game class
+        self.game = [Game sharedInstance];
+        
         // Allocate and initialize an empty array
         self.blockArray = [[NSMutableArray alloc] init];
         
@@ -26,26 +29,51 @@
             // Create an empty array for the 2nd dimension
             NSMutableArray *column = [[NSMutableArray alloc]init];
             
-            // Add 3 strings of "Empty" to the array
+            // Add 3 Empty blocks to the array
             for (int i = 0; i < 3; i++) {
-                [column addObject:@"Empty"];
+                Block *block = [[Block alloc] initWithColor:@"Empty" withStyle:self.game.blockStyle];
+                [column addObject:block];
             }
             
             // Add the column into the grid array
             [self.blockArray addObject:column];
         }
-        
-        // Get shared instance of the game class
-        self.game = [Game sharedInstance];
     }
     
     return self;
 }
 
--(void)spawnRow{
+-(void)spawnColumn{
     
+    // How many blocks will we spawn?
+    int numberOfBlocks = arc4random_uniform(2) +1; // Generate random number from 1-2
     
+    // Where in the column will they be spawned?
+    int blockLocation = arc4random_uniform(3) +1; // Generate random number from 1-3
     
+    while (numberOfBlocks > 0){
+        Block *block = (Block *)[[self.blockArray objectAtIndex:8] objectAtIndex:blockLocation];
+        if( [block.blockColor caseInsensitiveCompare:@"Empty"] ){
+            
+            // Which block in the bag will we use?
+            int blockIndex = arc4random_uniform(self.blockBag.count); // Generate a random number from 0-(number of blocks in the bag)
+            
+            // remove the block from the bag
+            Block *spawnedBlock = self.blockBag[blockIndex];
+            self.blockBag[blockIndex] = nil;
+            
+            // Refill the bag if it's empty
+            if ([self bagIsEmpty]) {
+                [self refillBag];
+            }
+            
+            // Insert spawned block into grid
+            [[self.blockArray objectAtIndex:8] setObject:spawnedBlock atIndex:blockLocation];
+            
+            // Reduce blocks to be spawned count
+            numberOfBlocks -= 1;
+        }
+    }
 }
 
 -(void)moveBlocksLeft{
@@ -61,12 +89,10 @@
     return NO;
 }
 
--(BOOL)moveBlockID:(int)blockID toPoint:(CGPoint)touchLocation{
-
-    return NO;
+-(void)moveBlockID:(int)blockID toPoint:(CGPoint)touchLocation{
 }
 
--(BOOL)isBagEmpty{
+-(BOOL)bagIsEmpty{
     if (self.blockBag.count <= 0) {
         return YES;
     }

@@ -30,7 +30,7 @@
 -(id)init;
 
 // Creates a new row of blocks offscreen
--(void)spawnRow;
+-(void)spawnColumn;
 
 // Moves all blocks in the grid left one array index
 -(void)moveBlocksLeft;
@@ -42,10 +42,10 @@
 -(Block *)getBlockAtTouchLocation:(CGPoint)touchLocation;
 
 // Moves a block to a new index based on touch location
--(BOOL)moveBlockID:(int)blockID toPoint:(CGPoint)touchLocation;
+-(void)moveBlockID:(int)blockID toPoint:(CGPoint)touchLocation;
 
 // Checks to see if bag of blocks is empty
--(BOOL)isBagEmpty;
+-(BOOL)bagIsEmpty;
 
 // Refills bag of blocks
 -(void)refillBag;

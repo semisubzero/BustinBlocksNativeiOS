@@ -23,7 +23,7 @@
 }
 
 +(NSArray *)validColors{
-    return @[@"Blue",@"Green",@"Red",@"Yellow"];
+    return @[@"Blue",@"Green",@"Red",@"Yellow",@"Empty"];
 }
 
 +(NSArray *)validStyles{
