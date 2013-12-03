@@ -10,48 +10,46 @@
 
 @implementation MenuScene
 
+@synthesize backgroundSprite;
+@synthesize backgroundSprite2;
+
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:CGSizeMake(size.height, size.width)]) {
         /* Setup your scene here */
         
         self.backgroundColor = [SKColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1.0];
         
-        // Initialize the scrolling background
-        SKSpriteNode *backgroundSprite = [SKSpriteNode spriteNodeWithImageNamed:@"MenuBackground.png"];
-        backgroundSprite.position = CGPointMake(backgroundSprite.size.width/2, backgroundSprite.size.height/2);
-        [self addChild:backgroundSprite];
+        self.backgroundSprite = [SKSpriteNode spriteNodeWithImageNamed:@"MenuBackground.png"];
+        self.backgroundSprite2 = [SKSpriteNode spriteNodeWithImageNamed:@"MenuBackground.png"];
         
-        SKAction *scrollLeft = [SKAction moveToX:-backgroundSprite.size.width/2 duration:20];
+        // Initialize the background sprites
+        self.backgroundSprite.anchorPoint = CGPointMake(0, 0);
+        self.backgroundSprite.position = CGPointMake(0,0);
+        [self addChild:self.backgroundSprite];
+        self.backgroundSprite2.anchorPoint = CGPointMake(0, 0);
+        self.backgroundSprite2.position = CGPointMake(self.backgroundSprite.size.width, 0);
+        [self addChild:self.backgroundSprite2];
         
-        [backgroundSprite runAction:scrollLeft];
-        //SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        
-        //myLabel.text = @"Hello, World!";
-        //myLabel.fontSize = 30;
-        //myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-        //                               CGRectGetMidY(self.frame));
-        
-        //[self addChild:myLabel];
     }
     return self;
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    /* Called when a touch begins */
-    
-    for (UITouch *touch in touches) {
-        //CGPoint location = [touch locationInNode:self];
-        
-        //sprite.position = location;
-        
-        //SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        //[sprite runAction:[SKAction repeatActionForever:action]];
-    }
-}
-
 -(void)update:(CFTimeInterval)currentTime {
-    /* Called before each frame is rendered */
+    
+    self.backgroundSprite.position = CGPointMake(self.backgroundSprite.position.x -2, 0);
+    self.backgroundSprite2.position = CGPointMake(self.backgroundSprite2.position.x -2, 0);
+
+    if (self.backgroundSprite.position.x <= -self.backgroundSprite.size.width) {
+        self.backgroundSprite.position = CGPointMake(backgroundSprite2.position.x + backgroundSprite.size.width, 0);
+    }
+    
+    if (self.backgroundSprite2.position.x <= -self.backgroundSprite2.size.width) {
+        self.backgroundSprite2.position = CGPointMake(backgroundSprite.position.x + backgroundSprite2.size.width, 0);
+    }
+    
+    
+    
+
 }
 
 @end

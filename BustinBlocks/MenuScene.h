@@ -10,4 +10,7 @@
 
 @interface MenuScene : SKScene
 
+@property SKSpriteNode *backgroundSprite;
+@property SKSpriteNode *backgroundSprite2;
+
 @end

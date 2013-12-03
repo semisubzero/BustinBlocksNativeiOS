@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA60F672184C61A30013E43D /* MenuBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = CA60F671184C61A30013E43D /* MenuBackground.png */; };
 		CA60F674184C75200013E43D /* MainLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CA60F673184C75200013E43D /* MainLogo.png */; };
 		CA60F67A184C78DC0013E43D /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CA60F679184C78DC0013E43D /* GameScene.m */; };
 		CA60F67D184C7A1B0013E43D /* DefaultBackgroundBorders.png in Resources */ = {isa = PBXBuildFile; fileRef = CA60F67C184C7A1B0013E43D /* DefaultBackgroundBorders.png */; };
@@ -31,6 +30,8 @@
 		CAE7E3991824E25000A82831 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAE7E3971824E25000A82831 /* InfoPlist.strings */; };
 		CAE7E39B1824E25000A82831 /* BustinBlocksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE7E39A1824E25000A82831 /* BustinBlocksTests.m */; };
 		CAEBD61F184DD19900736B46 /* PauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBD61E184DD19900736B46 /* PauseButton.png */; };
+		CAEBD624184DE21800736B46 /* MenuBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBD623184DE21800736B46 /* MenuBackground.png */; };
+		CAEBD62A184DE78B00736B46 /* matchBox.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBD629184DE78B00736B46 /* matchBox.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CA60F671184C61A30013E43D /* MenuBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuBackground.png; sourceTree = "<group>"; };
 		CA60F673184C75200013E43D /* MainLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainLogo.png; sourceTree = "<group>"; };
 		CA60F678184C78DC0013E43D /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		CA60F679184C78DC0013E43D /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
@@ -76,6 +76,8 @@
 		CAE7E3981824E25000A82831 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CAE7E39A1824E25000A82831 /* BustinBlocksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BustinBlocksTests.m; sourceTree = "<group>"; };
 		CAEBD61E184DD19900736B46 /* PauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PauseButton.png; path = "../../../../../HazardSoftware/Finished Projects/Bustin Blocks (Old)/iPhone Version/PauseButton.png"; sourceTree = "<group>"; };
+		CAEBD623184DE21800736B46 /* MenuBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuBackground.png; sourceTree = "<group>"; };
+		CAEBD629184DE78B00736B46 /* matchBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = matchBox.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +117,8 @@
 		CA60F670184C5F7C0013E43D /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				CAEBD623184DE21800736B46 /* MenuBackground.png */,
 				CA60F673184C75200013E43D /* MainLogo.png */,
-				CA60F671184C61A30013E43D /* MenuBackground.png */,
 			);
 			name = Backgrounds;
 			sourceTree = "<group>";
@@ -124,6 +126,7 @@
 		CA60F67B184C79E90013E43D /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				CAEBD628184DE75000736B46 /* Objects */,
 				CAEBD620184DD19D00736B46 /* Buttons */,
 				CA60F681184C7A330013E43D /* BackgroundGrids */,
 				CA60F680184C7A250013E43D /* BackgroundBorders */,
@@ -237,6 +240,14 @@
 			name = Buttons;
 			sourceTree = "<group>";
 		};
+		CAEBD628184DE75000736B46 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				CAEBD629184DE78B00736B46 /* matchBox.png */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -314,9 +325,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA60F67D184C7A1B0013E43D /* DefaultBackgroundBorders.png in Resources */,
+				CAEBD62A184DE78B00736B46 /* matchBox.png in Resources */,
 				CAE7E3881824E24F00A82831 /* Images.xcassets in Resources */,
+				CAEBD624184DE21800736B46 /* MenuBackground.png in Resources */,
 				CAEBD61F184DD19900736B46 /* PauseButton.png in Resources */,
-				CA60F672184C61A30013E43D /* MenuBackground.png in Resources */,
 				CA60F67F184C7A220013E43D /* DefaultBackgroundGrid.png in Resources */,
 				CAE7E37E1824E24F00A82831 /* Main_iPad.storyboard in Resources */,
 				CAE7E37B1824E24F00A82831 /* Main_iPhone.storyboard in Resources */,

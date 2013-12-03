@@ -12,7 +12,6 @@
 @implementation MenuViewController
 
 - (IBAction)StoreButton {
-    NSLog(@"Test");
 }
 - (IBAction)GameCenterButton {
 }
