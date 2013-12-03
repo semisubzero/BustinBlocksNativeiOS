@@ -12,6 +12,7 @@
 
 @property (nonatomic,strong) NSString *blockColor;
 @property (nonatomic,strong) NSString *blockStyle;
+@property int blockID;
 
 -(id)initWithColor:(NSString *)color withStyle:(NSString *)style;
 
