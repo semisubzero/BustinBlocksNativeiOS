@@ -21,13 +21,13 @@ static Game *sharedInstance = nil;
     return sharedInstance;
 }
 
-// We can still have a regular init method, that will get called the first time the Singleton is used.
-- (id)init
-{
-    self = [super init];
-    
-    if (self) {
-        // Work your initialising magic here as you normally would
+-(id)init {
+    if (self = [super init] ){
+        // Square is 60 pixels wide on iphone
+        self.squareSize = 60;
+        
+        // Initial speed (in seconds) at which the blocks move to the left by 1 square
+        self.moveSpeed = 1;
     }
     
     return self;

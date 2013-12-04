@@ -7,16 +7,34 @@
 //
 
 #import "GameScene.h"
+#import "Game.h"
 
 @implementation GameScene
 
 -(id)initWithSize:(CGSize)size{
     if (self = [super initWithSize:CGSizeMake(size.height, size.width)]){
         
-        // Create the background grid
-        SKSpriteNode *grid = [SKSpriteNode spriteNodeWithImageNamed:@"DefaultBackgroundGrid.png"];
-        grid.position = CGPointMake(size.height/2, size.width/2);
-        [self addChild:grid];
+        // Get the shared instance of our game data
+        self.game = [Game sharedInstance];
+        
+        // Create the background grids
+        self.grid = [SKSpriteNode spriteNodeWithImageNamed:@"DefaultBackgroundGrid.png"];
+        self.grid.anchorPoint = CGPointMake(0, 0.5);
+        self.grid.position = CGPointMake(0,size.width/2);
+        [self addChild:self.grid];
+        
+        // Second grid
+        self.grid2 = [SKSpriteNode spriteNodeWithImageNamed:@"DefaultBackgroundGrid.png"];
+        self.grid2.anchorPoint = CGPointMake(0, 0.5);
+        self.grid2.position = CGPointMake(self.grid.position.x + self.grid.size.width, size.width/2);
+        [self addChild:self.grid2];
+        
+        // Setup the move left actions
+        self.moveLeft = [SKAction moveByX:-self.game.squareSize y:0 duration:self.game.moveSpeed];
+        SKAction *runLeftForever = [SKAction repeatActionForever:self.moveLeft];
+        
+        [self.grid runAction:runLeftForever];
+        [self.grid2 runAction:runLeftForever];
         
     }
     return self;

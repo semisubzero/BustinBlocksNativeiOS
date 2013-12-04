@@ -10,6 +10,9 @@
 
 @interface Game : NSObject
 
+@property int squareSize;
+@property int moveSpeed;
+
 @property (nonatomic,strong) NSString *gameDifficulty;
 @property (nonatomic,strong) NSString *blockStyle;
 
