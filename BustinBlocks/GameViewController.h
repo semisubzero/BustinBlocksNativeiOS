@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 
+@class Grid;
+@class GameScene;
+
 @interface GameViewController : UIViewController
+
+@property Grid *grid;
+@property GameScene *scene;
+
+-(void)moveLeft;
 
 @end

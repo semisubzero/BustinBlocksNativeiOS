@@ -10,7 +10,8 @@
 
 // Lets compiler know that there is a class called block
 @class Block;
-@class Game;
+@class GameData;
+@class SKScene;
 
 @interface Grid : NSObject
 
@@ -24,10 +25,13 @@
 @property int blockOffset;
 
 // Shared instance of the Game class
-@property Game *game;
+@property GameData *game;
+
+// The parent scene that uses the grid
+@property SKScene *parent;
 
 // Overrides default initializer so we can setup our array
--(id)init;
+-(id)initWithParent:(SKScene *)parent;
 
 // Creates a new row of blocks offscreen
 -(void)spawnColumn;

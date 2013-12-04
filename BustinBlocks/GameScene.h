@@ -8,15 +8,17 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@class Game;
+@class GameData;
 
 @interface GameScene : SKScene
 
-@property SKSpriteNode *grid;
-@property SKSpriteNode *grid2;
+@property SKSpriteNode *gridSprite;
+@property SKSpriteNode *gridSprite2;
 
-@property SKAction *moveLeft;
+@property SKAction *moveSpritesLeft;
 
-@property Game *game;
+@property GameData *game;
+
+-(void)moveLeft;
 
 @end

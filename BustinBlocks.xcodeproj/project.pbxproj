@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA007144184F4CA200AA3CF0 /* BlueDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = CA007143184F4CA200AA3CF0 /* BlueDefault.png */; };
+		CA007146184F4CAF00AA3CF0 /* GreenDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = CA007145184F4CAF00AA3CF0 /* GreenDefault.png */; };
+		CA007148184F4CBB00AA3CF0 /* RedDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = CA007147184F4CBB00AA3CF0 /* RedDefault.png */; };
+		CA00714A184F4CC600AA3CF0 /* YellowDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = CA007149184F4CC600AA3CF0 /* YellowDefault.png */; };
 		CA60F674184C75200013E43D /* MainLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CA60F673184C75200013E43D /* MainLogo.png */; };
 		CA60F67A184C78DC0013E43D /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CA60F679184C78DC0013E43D /* GameScene.m */; };
 		CA60F67D184C7A1B0013E43D /* DefaultBackgroundBorders.png in Resources */ = {isa = PBXBuildFile; fileRef = CA60F67C184C7A1B0013E43D /* DefaultBackgroundBorders.png */; };
@@ -14,11 +18,7 @@
 		CA60F684184C7A710013E43D /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA60F683184C7A710013E43D /* GameViewController.m */; };
 		CAE0757D184DF080004990FE /* Block.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE0757C184DF080004990FE /* Block.m */; };
 		CAE07580184DF1B8004990FE /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE0757F184DF1B8004990FE /* Grid.m */; };
-		CAE07583184DF8C7004990FE /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE07582184DF8C7004990FE /* Game.m */; };
-		CAE0758A184E0C11004990FE /* Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CAE07589184E0C11004990FE /* Blue.png */; };
-		CAE0758C184E0C1B004990FE /* Green.png in Resources */ = {isa = PBXBuildFile; fileRef = CAE0758B184E0C1B004990FE /* Green.png */; };
-		CAE0758E184E0C23004990FE /* Red.png in Resources */ = {isa = PBXBuildFile; fileRef = CAE0758D184E0C23004990FE /* Red.png */; };
-		CAE07590184E0C2D004990FE /* Yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = CAE0758F184E0C2D004990FE /* Yellow.png */; };
+		CAE07583184DF8C7004990FE /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE07582184DF8C7004990FE /* GameData.m */; };
 		CAE7E3661824E24F00A82831 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE7E3651824E24F00A82831 /* Foundation.framework */; };
 		CAE7E3681824E24F00A82831 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE7E3671824E24F00A82831 /* CoreGraphics.framework */; };
 		CAE7E36A1824E24F00A82831 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE7E3691824E24F00A82831 /* UIKit.framework */; };
@@ -52,6 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA007143184F4CA200AA3CF0 /* BlueDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueDefault.png; sourceTree = "<group>"; };
+		CA007145184F4CAF00AA3CF0 /* GreenDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenDefault.png; sourceTree = "<group>"; };
+		CA007147184F4CBB00AA3CF0 /* RedDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedDefault.png; sourceTree = "<group>"; };
+		CA007149184F4CC600AA3CF0 /* YellowDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowDefault.png; sourceTree = "<group>"; };
 		CA60F673184C75200013E43D /* MainLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainLogo.png; sourceTree = "<group>"; };
 		CA60F678184C78DC0013E43D /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		CA60F679184C78DC0013E43D /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
@@ -63,12 +67,8 @@
 		CAE0757C184DF080004990FE /* Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Block.m; sourceTree = "<group>"; };
 		CAE0757E184DF1B8004990FE /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
 		CAE0757F184DF1B8004990FE /* Grid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grid.m; sourceTree = "<group>"; };
-		CAE07581184DF8C7004990FE /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
-		CAE07582184DF8C7004990FE /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
-		CAE07589184E0C11004990FE /* Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue.png; sourceTree = "<group>"; };
-		CAE0758B184E0C1B004990FE /* Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Green.png; sourceTree = "<group>"; };
-		CAE0758D184E0C23004990FE /* Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Red.png; sourceTree = "<group>"; };
-		CAE0758F184E0C2D004990FE /* Yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Yellow.png; sourceTree = "<group>"; };
+		CAE07581184DF8C7004990FE /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
+		CAE07582184DF8C7004990FE /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
 		CAE7E3621824E24F00A82831 /* BustinBlocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BustinBlocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAE7E3651824E24F00A82831 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CAE7E3671824E24F00A82831 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,6 +122,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA00713E184F4C7D00AA3CF0 /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				CA007142184F4C9200AA3CF0 /* Yellow */,
+				CA007141184F4C8D00AA3CF0 /* Red */,
+				CA007140184F4C8900AA3CF0 /* Green */,
+				CA00713F184F4C8400AA3CF0 /* Blue */,
+			);
+			name = Blocks;
+			sourceTree = "<group>";
+		};
+		CA00713F184F4C8400AA3CF0 /* Blue */ = {
+			isa = PBXGroup;
+			children = (
+				CA007143184F4CA200AA3CF0 /* BlueDefault.png */,
+			);
+			name = Blue;
+			sourceTree = "<group>";
+		};
+		CA007140184F4C8900AA3CF0 /* Green */ = {
+			isa = PBXGroup;
+			children = (
+				CA007145184F4CAF00AA3CF0 /* GreenDefault.png */,
+			);
+			name = Green;
+			sourceTree = "<group>";
+		};
+		CA007141184F4C8D00AA3CF0 /* Red */ = {
+			isa = PBXGroup;
+			children = (
+				CA007147184F4CBB00AA3CF0 /* RedDefault.png */,
+			);
+			name = Red;
+			sourceTree = "<group>";
+		};
+		CA007142184F4C9200AA3CF0 /* Yellow */ = {
+			isa = PBXGroup;
+			children = (
+				CA007149184F4CC600AA3CF0 /* YellowDefault.png */,
+			);
+			name = Yellow;
+			sourceTree = "<group>";
+		};
 		CA60F66F184C5F6C0013E43D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,7 +186,7 @@
 		CA60F67B184C79E90013E43D /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				CAE07584184E0BE8004990FE /* Blocks */,
+				CA00713E184F4C7D00AA3CF0 /* Blocks */,
 				CAEBD628184DE75000736B46 /* Objects */,
 				CAEBD620184DD19D00736B46 /* Buttons */,
 				CA60F681184C7A330013E43D /* BackgroundGrids */,
@@ -175,53 +218,10 @@
 				CAE0757C184DF080004990FE /* Block.m */,
 				CAE0757E184DF1B8004990FE /* Grid.h */,
 				CAE0757F184DF1B8004990FE /* Grid.m */,
-				CAE07581184DF8C7004990FE /* Game.h */,
-				CAE07582184DF8C7004990FE /* Game.m */,
+				CAE07581184DF8C7004990FE /* GameData.h */,
+				CAE07582184DF8C7004990FE /* GameData.m */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		CAE07584184E0BE8004990FE /* Blocks */ = {
-			isa = PBXGroup;
-			children = (
-				CAE07588184E0BFE004990FE /* Yellow */,
-				CAE07587184E0BF9004990FE /* Green */,
-				CAE07586184E0BF4004990FE /* Blue */,
-				CAE07585184E0BEE004990FE /* Red */,
-			);
-			name = Blocks;
-			sourceTree = "<group>";
-		};
-		CAE07585184E0BEE004990FE /* Red */ = {
-			isa = PBXGroup;
-			children = (
-				CAE0758D184E0C23004990FE /* Red.png */,
-			);
-			name = Red;
-			sourceTree = "<group>";
-		};
-		CAE07586184E0BF4004990FE /* Blue */ = {
-			isa = PBXGroup;
-			children = (
-				CAE07589184E0C11004990FE /* Blue.png */,
-			);
-			name = Blue;
-			sourceTree = "<group>";
-		};
-		CAE07587184E0BF9004990FE /* Green */ = {
-			isa = PBXGroup;
-			children = (
-				CAE0758B184E0C1B004990FE /* Green.png */,
-			);
-			name = Green;
-			sourceTree = "<group>";
-		};
-		CAE07588184E0BFE004990FE /* Yellow */ = {
-			isa = PBXGroup;
-			children = (
-				CAE0758F184E0C2D004990FE /* Yellow.png */,
-			);
-			name = Yellow;
 			sourceTree = "<group>";
 		};
 		CAE7E3591824E24F00A82831 = {
@@ -400,18 +400,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA60F67D184C7A1B0013E43D /* DefaultBackgroundBorders.png in Resources */,
-				CAE0758C184E0C1B004990FE /* Green.png in Resources */,
+				CA00714A184F4CC600AA3CF0 /* YellowDefault.png in Resources */,
+				CA007144184F4CA200AA3CF0 /* BlueDefault.png in Resources */,
 				CAEBD62A184DE78B00736B46 /* matchBox.png in Resources */,
-				CAE07590184E0C2D004990FE /* Yellow.png in Resources */,
 				CAE7E3881824E24F00A82831 /* Images.xcassets in Resources */,
 				CAEBD624184DE21800736B46 /* MenuBackground.png in Resources */,
 				CAEBD61F184DD19900736B46 /* PauseButton.png in Resources */,
 				CA60F67F184C7A220013E43D /* DefaultBackgroundGrid.png in Resources */,
 				CAE7E37E1824E24F00A82831 /* Main_iPad.storyboard in Resources */,
 				CAE7E37B1824E24F00A82831 /* Main_iPhone.storyboard in Resources */,
+				CA007146184F4CAF00AA3CF0 /* GreenDefault.png in Resources */,
 				CA60F674184C75200013E43D /* MainLogo.png in Resources */,
-				CAE0758E184E0C23004990FE /* Red.png in Resources */,
-				CAE0758A184E0C11004990FE /* Blue.png in Resources */,
+				CA007148184F4CBB00AA3CF0 /* RedDefault.png in Resources */,
 				CAE7E3721824E24F00A82831 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,7 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAE07583184DF8C7004990FE /* Game.m in Sources */,
+				CAE07583184DF8C7004990FE /* GameData.m in Sources */,
 				CAE7E3841824E24F00A82831 /* MenuScene.m in Sources */,
 				CAE7E3811824E24F00A82831 /* MenuViewController.m in Sources */,
 				CA60F67A184C78DC0013E43D /* GameScene.m in Sources */,

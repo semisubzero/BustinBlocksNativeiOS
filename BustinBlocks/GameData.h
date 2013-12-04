@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Game : NSObject
+@interface GameData : NSObject
 
 @property int squareSize;
 @property int moveSpeed;

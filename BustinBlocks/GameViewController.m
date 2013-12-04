@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 #import "GameScene.h"
+#import "Grid.h"
 
 @implementation GameViewController
 
@@ -21,11 +22,28 @@
     sceneView.showsNodeCount = YES;
     sceneView.showsDrawCount = YES;
     // Create and configure the scene.
-    SKScene * scene = [GameScene sceneWithSize:sceneView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFit;
+    self.scene = [GameScene sceneWithSize:sceneView.bounds.size];
+    self.scene.scaleMode = SKSceneScaleModeAspectFit;
     
     // Present the scene.
-    [sceneView presentScene:scene];
+    [sceneView presentScene:self.scene];
+    
+    // Create grid class
+    self.grid = [[Grid alloc] initWithParent:self.scene];
+    
+    [self moveLeft];
+}
+
+-(void)moveLeft{
+    // Move blocks
+    [self.grid moveBlocksLeft];
+    
+    // Generate new column
+    [self.grid spawnColumn];
+    
+    // Move everything onscreen left that's supposed to move left
+    [self.scene moveLeft];
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -7,7 +7,7 @@
 //
 
 #import "GameScene.h"
-#import "Game.h"
+#import "GameData.h"
 
 @implementation GameScene
 
@@ -15,29 +15,30 @@
     if (self = [super initWithSize:CGSizeMake(size.height, size.width)]){
         
         // Get the shared instance of our game data
-        self.game = [Game sharedInstance];
+        self.game = [GameData sharedInstance];
         
         // Create the background grids
-        self.grid = [SKSpriteNode spriteNodeWithImageNamed:@"DefaultBackgroundGrid.png"];
-        self.grid.anchorPoint = CGPointMake(0, 0.5);
-        self.grid.position = CGPointMake(0,size.width/2);
-        [self addChild:self.grid];
+        self.gridSprite = [SKSpriteNode spriteNodeWithImageNamed:@"DefaultBackgroundGrid.png"];
+        self.gridSprite.anchorPoint = CGPointMake(0, 0.5);
+        self.gridSprite.position = CGPointMake(0,size.width/2);
+        [self addChild:self.gridSprite];
         
         // Second grid
-        self.grid2 = [SKSpriteNode spriteNodeWithImageNamed:@"DefaultBackgroundGrid.png"];
-        self.grid2.anchorPoint = CGPointMake(0, 0.5);
-        self.grid2.position = CGPointMake(self.grid.position.x + self.grid.size.width, size.width/2);
-        [self addChild:self.grid2];
+        self.gridSprite2 = [SKSpriteNode spriteNodeWithImageNamed:@"DefaultBackgroundGrid.png"];
+        self.gridSprite2.anchorPoint = CGPointMake(0, 0.5);
+        self.gridSprite2.position = CGPointMake(self.gridSprite.position.x + self.gridSprite.size.width, size.width/2);
+        [self addChild:self.gridSprite2];
         
         // Setup the move left actions
-        self.moveLeft = [SKAction moveByX:-self.game.squareSize y:0 duration:self.game.moveSpeed];
-        SKAction *runLeftForever = [SKAction repeatActionForever:self.moveLeft];
-        
-        [self.grid runAction:runLeftForever];
-        [self.grid2 runAction:runLeftForever];
+        self.moveSpritesLeft = [SKAction moveByX:-self.game.squareSize y:0 duration:self.game.moveSpeed];
         
     }
     return self;
+}
+
+-(void)moveLeft{
+    [self.gridSprite runAction:self.moveSpritesLeft];
+    [self.gridSprite2 runAction:self.moveSpritesLeft];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

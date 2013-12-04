@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 Semisubzero. All rights reserved.
 //
 
-#import "Game.h"
+#import "GameData.h"
 
-@implementation Game
+@implementation GameData
 
-static Game *sharedInstance = nil;
+static GameData *sharedInstance = nil;
 
 // Get the shared instance and create it if necessary.
-+ (Game *)sharedInstance {
++ (GameData *)sharedInstance {
     if (sharedInstance == nil) {
         sharedInstance = [[super allocWithZone:NULL] init];
     }

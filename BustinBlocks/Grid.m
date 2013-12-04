@@ -8,16 +8,21 @@
 
 #import "Grid.h"
 #import "Block.h"
-#import "Game.h"
+#import "GameData.h"
+#import <SpriteKit/SpriteKit.h>
 
 @implementation Grid
 
--(id)init{
+-(id)initWithParent:(SKScene *)parent{
     
     if (self = [super init]){
         
         // Get shared instance of the game class
-        self.game = [Game sharedInstance];
+        self.game = [GameData sharedInstance];
+        
+        // Initialize and fill the block bag
+        self.blockBag = [[NSMutableArray alloc] init];
+        [self refillBag];
         
         // Allocate and initialize an empty array
         self.blockArray = [[NSMutableArray alloc] init];
@@ -31,7 +36,7 @@
             
             // Add 3 Empty blocks to the array
             for (int i = 0; i < 3; i++) {
-                Block *block = [[Block alloc] initWithColor:@"Empty" withStyle:self.game.blockStyle];
+                Block *block = [[Block alloc] initWithColor:@"Empty" withStyle:self.game.blockStyle withParent:self.parent];
                 [column addObject:block];
             }
             
@@ -44,39 +49,54 @@
 }
 
 -(void)spawnColumn{
+    NSMutableArray *newColumn = [[NSMutableArray alloc] init];
+    
+    // Fill the column with empty blocks
+    for (int i = 0; i < 3; i++) {
+        [newColumn addObject:[[Block alloc] initEmptyBlock]];
+    }
     
     // How many blocks will we spawn?
     int numberOfBlocks = arc4random_uniform(2) +1; // Generate random number from 1-2
     
-    // Where in the column will they be spawned?
-    int blockLocation = arc4random_uniform(3) +1; // Generate random number from 1-3
-    
     while (numberOfBlocks > 0){
-        Block *block = (Block *)[[self.blockArray objectAtIndex:8] objectAtIndex:blockLocation];
-        if( [block.blockColor caseInsensitiveCompare:@"Empty"] ){
+        // Where in the column will they be spawned?
+        int blockLocation = arc4random_uniform(3); // Generate random number from 0-2 (3 total slots)
+        
+        Block *block = (Block *)[newColumn objectAtIndex:blockLocation];
+        if( [block.blockColor caseInsensitiveCompare:@"Empty"] == NSOrderedSame){ // If that slot in the column is empty
             
             // Which block in the bag will we use?
             int blockIndex = arc4random_uniform(self.blockBag.count); // Generate a random number from 0-(number of blocks in the bag)
             
             // remove the block from the bag
             Block *spawnedBlock = self.blockBag[blockIndex];
-            self.blockBag[blockIndex] = nil;
+            [self.blockBag removeObjectAtIndex:blockIndex];
             
             // Refill the bag if it's empty
             if ([self bagIsEmpty]) {
                 [self refillBag];
             }
             
-            // Insert spawned block into grid
-            [[self.blockArray objectAtIndex:8] setObject:spawnedBlock atIndex:blockLocation];
+            // Insert spawned block into column
+            [newColumn replaceObjectAtIndex:blockLocation withObject:spawnedBlock];
             
             // Reduce blocks to be spawned count
             numberOfBlocks -= 1;
         }
     }
+    
+    // Add the new column to the array
+    [self.blockArray addObject:newColumn];
 }
 
 -(void)moveBlocksLeft{
+    
+    // Remove the first column of blocks
+    [self.blockArray removeObjectAtIndex:0];
+    
+    // Spawn a new column of blocks
+    [self spawnColumn];
     
 }
 
@@ -126,7 +146,7 @@
             currentColor = @"Yellow";
         }
         // Create new block
-        Block *block = [[Block alloc] initWithColor:currentColor withStyle:self.game.blockStyle];
+        Block *block = [[Block alloc] initWithColor:currentColor withStyle:self.game.blockStyle withParent:self.parent];
         
         // Add new block to the bag
         [self.blockBag addObject:block];
