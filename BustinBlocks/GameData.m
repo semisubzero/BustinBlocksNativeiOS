@@ -26,6 +26,9 @@ static GameData *sharedInstance = nil;
         // Square is 60 pixels wide on iphone
         self.squareSize = 60;
         
+        // Border size is 66 pixels tall on iphone
+        self.borderSize = 70;
+        
         // Initial speed (in seconds) at which the blocks move to the left by 1 square
         self.moveSpeed = 1;
     }

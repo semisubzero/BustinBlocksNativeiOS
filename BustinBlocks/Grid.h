@@ -12,6 +12,7 @@
 @class Block;
 @class GameData;
 @class SKScene;
+@class SKAction;
 
 @interface Grid : NSObject
 
@@ -29,6 +30,8 @@
 
 // The parent scene that uses the grid
 @property SKScene *parent;
+
+@property SKAction *moveBlocks;
 
 // Overrides default initializer so we can setup our array
 -(id)initWithParent:(SKScene *)parent;

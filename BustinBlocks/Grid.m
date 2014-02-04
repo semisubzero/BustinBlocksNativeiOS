@@ -16,6 +16,8 @@
 -(id)initWithParent:(SKScene *)parent{
     
     if (self = [super init]){
+        // Set grids parent to the scene
+        self.parent = parent;
         
         // Get shared instance of the game class
         self.game = [GameData sharedInstance];
@@ -43,6 +45,10 @@
             // Add the column into the grid array
             [self.blockArray addObject:column];
         }
+        
+        // Create the move action to move the blocks by 1 square
+        self.moveBlocks = [SKAction moveByX:-self.game.squareSize y:0 duration:self.game.moveSpeed];
+        
     }
     
     return self;
@@ -60,6 +66,12 @@
     int numberOfBlocks = arc4random_uniform(2) +1; // Generate random number from 1-2
     
     while (numberOfBlocks > 0){
+        NSLog(@"Number of blocks: %i",numberOfBlocks);
+        // Refill the bag if it's empty
+        if ([self bagIsEmpty]) {
+            [self refillBag];
+        }
+        
         // Where in the column will they be spawned?
         int blockLocation = arc4random_uniform(3); // Generate random number from 0-2 (3 total slots)
         
@@ -73,21 +85,22 @@
             Block *spawnedBlock = self.blockBag[blockIndex];
             [self.blockBag removeObjectAtIndex:blockIndex];
             
-            // Refill the bag if it's empty
-            if ([self bagIsEmpty]) {
-                [self refillBag];
-            }
+            // Position the block
+            spawnedBlock.blockImage.position = CGPointMake(480 + self.game.squareSize/2, self.game.borderSize + (self.game.squareSize*blockLocation) + 30);
+            
+            //NSLog(@"Positioned %@ Block",spawnedBlock.blockColor);
             
             // Insert spawned block into column
             [newColumn replaceObjectAtIndex:blockLocation withObject:spawnedBlock];
             
             // Reduce blocks to be spawned count
-            numberOfBlocks -= 1;
+            numberOfBlocks = numberOfBlocks - 1;
         }
     }
     
     // Add the new column to the array
     [self.blockArray addObject:newColumn];
+    newColumn = nil;
 }
 
 -(void)moveBlocksLeft{
@@ -98,6 +111,17 @@
     // Spawn a new column of blocks
     [self spawnColumn];
     
+    // Iterate over all the columns in the array
+    for (NSMutableArray *column in self.blockArray) {
+        // Iterate over all the blocks in each column
+        for (Block *block in column) {
+            // if the block is not empty
+            if ([block.blockColor caseInsensitiveCompare:@"Empty"] != NSOrderedSame){
+                // Move the block left
+                [block.blockImage runAction:self.moveBlocks];
+            }
+        }
+    }
 }
 
 /*-(Block *)getBlockAtTouchLocation:(CGPoint)touchLocation{
@@ -124,7 +148,7 @@
     NSString *currentColor = @"Green";
     
     // Return if bag is not empty
-    if (self.blockBag.count != 0) {
+    if (![self bagIsEmpty]) {
         return;
     }
     

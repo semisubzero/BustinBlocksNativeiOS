@@ -36,7 +36,6 @@
 		CAE7E3911824E25000A82831 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE7E3691824E24F00A82831 /* UIKit.framework */; };
 		CAE7E3991824E25000A82831 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAE7E3971824E25000A82831 /* InfoPlist.strings */; };
 		CAE7E39B1824E25000A82831 /* BustinBlocksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE7E39A1824E25000A82831 /* BustinBlocksTests.m */; };
-		CAEBD61F184DD19900736B46 /* PauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBD61E184DD19900736B46 /* PauseButton.png */; };
 		CAEBD624184DE21800736B46 /* MenuBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBD623184DE21800736B46 /* MenuBackground.png */; };
 		CAEBD62A184DE78B00736B46 /* matchBox.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEBD629184DE78B00736B46 /* matchBox.png */; };
 /* End PBXBuildFile section */
@@ -92,7 +91,6 @@
 		CAE7E3961824E25000A82831 /* BustinBlocksTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BustinBlocksTests-Info.plist"; sourceTree = "<group>"; };
 		CAE7E3981824E25000A82831 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CAE7E39A1824E25000A82831 /* BustinBlocksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BustinBlocksTests.m; sourceTree = "<group>"; };
-		CAEBD61E184DD19900736B46 /* PauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PauseButton.png; path = "../../../../../HazardSoftware/Finished Projects/Bustin Blocks (Old)/iPhone Version/PauseButton.png"; sourceTree = "<group>"; };
 		CAEBD623184DE21800736B46 /* MenuBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuBackground.png; sourceTree = "<group>"; };
 		CAEBD629184DE78B00736B46 /* matchBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = matchBox.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -310,7 +308,6 @@
 		CAEBD620184DD19D00736B46 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				CAEBD61E184DD19900736B46 /* PauseButton.png */,
 			);
 			name = Buttons;
 			sourceTree = "<group>";
@@ -405,7 +402,6 @@
 				CAEBD62A184DE78B00736B46 /* matchBox.png in Resources */,
 				CAE7E3881824E24F00A82831 /* Images.xcassets in Resources */,
 				CAEBD624184DE21800736B46 /* MenuBackground.png in Resources */,
-				CAEBD61F184DD19900736B46 /* PauseButton.png in Resources */,
 				CA60F67F184C7A220013E43D /* DefaultBackgroundGrid.png in Resources */,
 				CAE7E37E1824E24F00A82831 /* Main_iPad.storyboard in Resources */,
 				CAE7E37B1824E24F00A82831 /* Main_iPhone.storyboard in Resources */,

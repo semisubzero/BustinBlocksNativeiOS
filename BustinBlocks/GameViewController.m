@@ -9,12 +9,19 @@
 #import "GameViewController.h"
 #import "GameScene.h"
 #import "Grid.h"
+#import "GameData.h"
+#import <SpriteKit/SpriteKit.h>
 
 @implementation GameViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Set default testing game data
+    GameData *game = [GameData sharedInstance];
+    game.gameDifficulty = @"Easy";
+    game.blockStyle = @"Default";
     
     // Configure the view.
     SKView * sceneView = (SKView *)self.view;
@@ -25,21 +32,19 @@
     self.scene = [GameScene sceneWithSize:sceneView.bounds.size];
     self.scene.scaleMode = SKSceneScaleModeAspectFit;
     
-    // Present the scene.
-    [sceneView presentScene:self.scene];
-    
     // Create grid class
     self.grid = [[Grid alloc] initWithParent:self.scene];
     
-    [self moveLeft];
+    // Present the scene.
+    [sceneView presentScene:self.scene];
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:game.moveSpeed target:self selector:@selector(moveLeft) userInfo:nil repeats:YES];
+    
 }
 
 -(void)moveLeft{
     // Move blocks
     [self.grid moveBlocksLeft];
-    
-    // Generate new column
-    [self.grid spawnColumn];
     
     // Move everything onscreen left that's supposed to move left
     [self.scene moveLeft];

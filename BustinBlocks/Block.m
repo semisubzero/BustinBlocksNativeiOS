@@ -14,17 +14,21 @@
 -(id)initWithColor:(NSString *)color withStyle:(NSString *)style withParent:(SKScene *)parent{
     
     if (self = [super init]){
-        // Create image filename
-        NSString *imageName = color;
-        [imageName stringByAppendingString:style];
-        [imageName stringByAppendingString:@".png"];
+        
+        // If it's not an empty block, load the image
+        if ([color caseInsensitiveCompare:@"Empty"] != NSOrderedSame) {
+            
+            // Create image filename
+            NSString *imageName = color;
+            imageName = [imageName stringByAppendingString:style];
+            imageName = [imageName stringByAppendingString:@".png"];
+        
+            self.blockImage = [SKSpriteNode spriteNodeWithImageNamed:imageName];
+            [parent addChild:self.blockImage];
+        }
         
         self.blockColor = color;
         self.blockStyle = style;
-        
-        self.blockImage = [SKSpriteNode spriteNodeWithImageNamed:imageName];
-        
-        [parent addChild:self.blockImage];
     }
     
     return self;

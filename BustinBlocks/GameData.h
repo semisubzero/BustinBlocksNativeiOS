@@ -10,7 +10,8 @@
 
 @interface GameData : NSObject
 
-@property int squareSize;
+@property float squareSize;
+@property int borderSize;
 @property int moveSpeed;
 
 @property (nonatomic,strong) NSString *gameDifficulty;

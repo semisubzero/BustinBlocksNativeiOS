@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <SpriteKit/SpriteKit.h>
 
 @class Grid;
 @class GameScene;
@@ -16,6 +15,7 @@
 
 @property Grid *grid;
 @property GameScene *scene;
+@property NSTimer *timer;
 
 -(void)moveLeft;
 

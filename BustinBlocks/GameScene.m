@@ -8,6 +8,7 @@
 
 #import "GameScene.h"
 #import "GameData.h"
+#import "Block.h"
 
 @implementation GameScene
 
@@ -37,21 +38,29 @@
 }
 
 -(void)moveLeft{
-    [self.gridSprite runAction:self.moveSpritesLeft];
-    [self.gridSprite2 runAction:self.moveSpritesLeft];
+    [self.gridSprite runAction:self.moveSpritesLeft completion:^{
+        if (self.gridSprite.position.x <= -self.gridSprite.size.width+1) {
+            self.gridSprite.position = CGPointMake(self.gridSprite.size.width, 160);
+        }
+    }];
+    [self.gridSprite2 runAction:self.moveSpritesLeft completion:^{
+        NSLog(@"%f",self.gridSprite2.position.x);
+        if (self.gridSprite2.position.x <= -self.gridSprite2.size.width+1) {
+            self.gridSprite2.position = CGPointMake(self.gridSprite2.size.width, 160);
+        }
+    }];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
     
+    Block *block = [[Block alloc] initWithColor:@"Blue" withStyle:@"Default" withParent:self.scene];
+    
     for (UITouch *touch in touches) {
-        //CGPoint location = [touch locationInNode:self];
+        CGPoint location = [touch locationInNode:self];
         
-        //sprite.position = location;
-        
-        //SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        //[sprite runAction:[SKAction repeatActionForever:action]];
+        block.blockImage.position = location;
+        NSLog(@"Touched X:%f Y:%f",location.x, location.y);
     }
 }
 
