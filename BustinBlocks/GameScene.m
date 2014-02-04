@@ -44,7 +44,6 @@
         }
     }];
     [self.gridSprite2 runAction:self.moveSpritesLeft completion:^{
-        NSLog(@"%f",self.gridSprite2.position.x);
         if (self.gridSprite2.position.x <= -self.gridSprite2.size.width+1) {
             self.gridSprite2.position = CGPointMake(self.gridSprite2.size.width, 160);
         }
@@ -52,14 +51,11 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    /* Called when a touch begins */
-    
-    Block *block = [[Block alloc] initWithColor:@"Blue" withStyle:@"Default" withParent:self.scene];
+    /* Called when a touch begins */  
     
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
         
-        block.blockImage.position = location;
         NSLog(@"Touched X:%f Y:%f",location.x, location.y);
     }
 }
