@@ -50,22 +50,9 @@
     }];
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    /* Called when a touch begins */  
-    
-    for (UITouch *touch in touches) {
-        CGPoint location = [touch locationInNode:self];
-        
-        NSLog(@"Touched X:%f Y:%f",location.x, location.y);
-    }
-}
-
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-}
-
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+    NSLog(@"%d",currentTime);
 }
 
 @end

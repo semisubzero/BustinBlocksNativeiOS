@@ -22,6 +22,10 @@
             NSString *imageName = color;
             imageName = [imageName stringByAppendingString:style];
             imageName = [imageName stringByAppendingString:@".png"];
+            
+            // Set scaling actions
+            self.scaleUpAction = [SKAction scaleTo:1.1 duration:0];
+            self.scaleDownAction = [SKAction scaleTo:1 duration:0];
         
             self.blockImage = [SKSpriteNode spriteNodeWithImageNamed:imageName];
             [parent addChild:self.blockImage];
@@ -42,6 +46,20 @@
     }
     
     return self;
+}
+
+-(void)isTouched{
+    self.isUnMovable = true;
+    [self.blockImage removeAllActions];
+    [self.blockImage runAction:self.scaleUpAction];
+    
+}
+
+-(void)isLetGo{
+    self.isUnMovable = false;
+    [self.blockImage removeAllActions];
+    [self.blockImage runAction:self.scaleDownAction];
+    
 }
 
 +(NSArray *)validColors{

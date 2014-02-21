@@ -7,11 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
-// Lets compiler know that there is a class called block
 @class Block;
 @class GameData;
 @class SKScene;
+@class SKSpriteNode;
 @class SKAction;
 
 @interface Grid : NSObject
@@ -30,6 +29,9 @@
 
 // The parent scene that uses the grid
 @property SKScene *parent;
+
+@property SKSpriteNode *gridSprite;
+@property SKSpriteNode *gridSprite2;
 
 @property SKAction *moveBlocks;
 

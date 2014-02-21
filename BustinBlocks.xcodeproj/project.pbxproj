@@ -209,7 +209,31 @@
 			name = BackgroundGrids;
 			sourceTree = "<group>";
 		};
-		CAE07579184DF058004990FE /* Model */ = {
+		CAC486FF18B707EF004D8331 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CAE7E3821824E24F00A82831 /* MenuScene.h */,
+				CAE7E3831824E24F00A82831 /* MenuScene.m */,
+				CA60F678184C78DC0013E43D /* GameScene.h */,
+				CA60F679184C78DC0013E43D /* GameScene.m */,
+				CAE7E3791824E24F00A82831 /* Main_iPhone.storyboard */,
+				CAE7E37C1824E24F00A82831 /* Main_iPad.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		CAC4870018B707F8004D8331 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CA60F682184C7A710013E43D /* GameViewController.h */,
+				CA60F683184C7A710013E43D /* GameViewController.m */,
+				CAE7E37F1824E24F00A82831 /* MenuViewController.h */,
+				CAE7E3801824E24F00A82831 /* MenuViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		CAE07579184DF058004990FE /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				CAE0757B184DF080004990FE /* Block.h */,
@@ -219,7 +243,7 @@
 				CAE07581184DF8C7004990FE /* GameData.h */,
 				CAE07582184DF8C7004990FE /* GameData.m */,
 			);
-			name = Model;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		CAE7E3591824E24F00A82831 = {
@@ -256,20 +280,12 @@
 		CAE7E36D1824E24F00A82831 /* BustinBlocks */ = {
 			isa = PBXGroup;
 			children = (
-				CA60F66F184C5F6C0013E43D /* Assets */,
-				CAE07579184DF058004990FE /* Model */,
 				CAE7E3761824E24F00A82831 /* AppDelegate.h */,
 				CAE7E3771824E24F00A82831 /* AppDelegate.m */,
-				CAE7E3791824E24F00A82831 /* Main_iPhone.storyboard */,
-				CAE7E37C1824E24F00A82831 /* Main_iPad.storyboard */,
-				CAE7E37F1824E24F00A82831 /* MenuViewController.h */,
-				CAE7E3801824E24F00A82831 /* MenuViewController.m */,
-				CAE7E3821824E24F00A82831 /* MenuScene.h */,
-				CAE7E3831824E24F00A82831 /* MenuScene.m */,
-				CA60F682184C7A710013E43D /* GameViewController.h */,
-				CA60F683184C7A710013E43D /* GameViewController.m */,
-				CA60F678184C78DC0013E43D /* GameScene.h */,
-				CA60F679184C78DC0013E43D /* GameScene.m */,
+				CA60F66F184C5F6C0013E43D /* Assets */,
+				CAC4870018B707F8004D8331 /* Controllers */,
+				CAC486FF18B707EF004D8331 /* Views */,
+				CAE07579184DF058004990FE /* Models */,
 				CAE7E3871824E24F00A82831 /* Images.xcassets */,
 				CAE7E36E1824E24F00A82831 /* Supporting Files */,
 			);

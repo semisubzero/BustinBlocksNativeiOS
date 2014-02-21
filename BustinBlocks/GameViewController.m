@@ -9,6 +9,7 @@
 #import "GameViewController.h"
 #import "GameScene.h"
 #import "Grid.h"
+#import "Block.h"
 #import "GameData.h"
 #import <SpriteKit/SpriteKit.h>
 
@@ -49,6 +50,38 @@
     // Move everything onscreen left that's supposed to move left
     [self.scene moveLeft];
     
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    /* Called when a touch begins */
+    
+    for (UITouch *touch in touches) {
+        CGPoint location = [touch locationInNode:self.scene];
+        
+        Block *touchedBlock = [self.grid getBlockAtTouchLocation:location];
+        
+        if([touchedBlock.blockColor caseInsensitiveCompare:@"Empty"] != NSOrderedSame){
+            self.activeBlock = touchedBlock;
+            [self.activeBlock isTouched];
+        }
+        
+        NSLog(@"Touched X:%f Y:%f",location.x, location.y);
+        
+    }
+}
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    for (UITouch *touch in touches) {
+        CGPoint location = [touch locationInNode:self.scene];
+        
+        // Move the active block with the finger
+        self.activeBlock.blockImage.position = location;
+    }
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.activeBlock isLetGo];
+    self.activeBlock = nil;
 }
 
 - (void)didReceiveMemoryWarning

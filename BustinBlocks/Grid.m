@@ -48,7 +48,6 @@
         
         // Create the move action to move the blocks by 1 square
         self.moveBlocks = [SKAction moveByX:-self.game.squareSize y:0 duration:self.game.moveSpeed];
-        
     }
     
     return self;
@@ -66,7 +65,6 @@
     int numberOfBlocks = arc4random_uniform(2) +1; // Generate random number from 1-2
     
     while (numberOfBlocks > 0){
-        NSLog(@"Number of blocks: %i",numberOfBlocks);
         // Refill the bag if it's empty
         if ([self bagIsEmpty]) {
             [self refillBag];
@@ -105,7 +103,7 @@
 
 -(void)moveBlocksLeft{
     
-    // Remove the first column of blocks
+    // Remove the first index so all columns shift left
     [self.blockArray removeObjectAtIndex:0];
     
     // Spawn a new column of blocks
@@ -117,16 +115,39 @@
         for (Block *block in column) {
             // if the block is not empty
             if ([block.blockColor caseInsensitiveCompare:@"Empty"] != NSOrderedSame){
-                // Move the block left
-                [block.blockImage runAction:self.moveBlocks];
+                // If it's movable
+                if(!block.isUnMovable){
+                    // Move the block left
+                    [block.blockImage runAction:self.moveBlocks];
+                }
             }
         }
     }
 }
 
-/*-(Block *)getBlockAtTouchLocation:(CGPoint)touchLocation{
+-(Block *)getBlockAtTouchLocation:(CGPoint)touchLocation{
     
-}*/
+    int column;
+    int row;
+    
+    Block *block = [[Block alloc] initEmptyBlock];
+    NSArray *columnArray;
+    GameData *game = [GameData sharedInstance];
+    
+    column = touchLocation.x / game.squareSize;
+    row = (touchLocation.y - game.borderSize)/ game.squareSize;
+    
+    NSLog(@"X:%d Y:%d",column, row);
+    
+    if(column < 8){
+        columnArray = [self.blockArray objectAtIndex:column];
+    }
+    if(row < 3){
+        block = [columnArray objectAtIndex:row];
+    }
+    
+    return block;
+}
 
 -(BOOL)isPointEmpty:(CGPoint)touchLocation{
 
