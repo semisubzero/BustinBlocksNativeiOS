@@ -13,11 +13,14 @@
 @property float squareSize;
 @property int borderSize;
 @property int moveSpeed;
+@property float gridOffset;
 
 @property (nonatomic,strong) NSString *gameDifficulty;
 @property (nonatomic,strong) NSString *blockStyle;
 
 +(id)sharedInstance;
+
+-(void)incrementOffset:(float)deltaTime;
 
 +(NSArray *)validDifficultys;
 

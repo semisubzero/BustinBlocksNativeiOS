@@ -7,11 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-@class SKSpriteNode;
-@class SKScene;
-@class SKAction;
+#import <SpriteKit/SpriteKit.h>
 
-@interface Block : NSObject
+@interface Block : SKNode
 
 @property (nonatomic,strong) NSString *blockColor;
 @property (nonatomic,strong) NSString *blockStyle;
@@ -22,12 +20,13 @@
 @property SKAction *scaleUpAction;
 @property SKAction *scaleDownAction;
 
-@property BOOL isUnMovable;
+@property BOOL isMovable;
 
 -(id)initWithColor:(NSString *)color withStyle:(NSString *)style withParent:(SKScene *)parent;
 -(id)initEmptyBlock;
 -(void)isTouched;
 -(void)isLetGo;
+-(void)onUpdate:(float)deltaTime;
 
 +(NSArray *)validColors;
 +(NSArray *)validStyles;

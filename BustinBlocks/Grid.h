@@ -33,16 +33,17 @@
 @property SKSpriteNode *gridSprite;
 @property SKSpriteNode *gridSprite2;
 
-@property SKAction *moveBlocks;
-
 // Overrides default initializer so we can setup our array
 -(id)initWithParent:(SKScene *)parent;
+
+// Moves and repositions the background grid sprites
+-(void)moveGridSprites:(float)deltaTime;
 
 // Creates a new row of blocks offscreen
 -(void)spawnColumn;
 
 // Moves all blocks in the grid left one array index
--(void)moveBlocksLeft;
+-(void)moveBlocksLeft:(float)deltaTime;
 
 // Checks location on screen to see if the grid index contains a block or not
 -(BOOL)isPointEmpty:(CGPoint)touchLocation;
@@ -58,5 +59,8 @@
 
 // Refills bag of blocks
 -(void)refillBag;
+
+// Update the grid on offset movement
+-(void)completedMove;
 
 @end

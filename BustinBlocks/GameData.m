@@ -29,11 +29,18 @@ static GameData *sharedInstance = nil;
         // Border size is 66 pixels tall on iphone
         self.borderSize = 70;
         
-        // Initial speed (in seconds) at which the blocks move to the left by 1 square
-        self.moveSpeed = 1;
+        // Initial speed (in pixels per second) at which the blocks move to the left by 1 square
+        self.moveSpeed = 50;
+        
+        // Set gridOffset to zero since the game hasn't started yet
+        self.gridOffset = 0;
     }
     
     return self;
+}
+
+-(void)incrementOffset:(float)deltaTime{
+    self.gridOffset += self.moveSpeed * deltaTime;
 }
 
 // Equally, we don't want to generate multiple copies of the singleton.

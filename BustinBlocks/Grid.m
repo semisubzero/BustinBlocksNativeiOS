@@ -19,6 +19,18 @@
         // Set grids parent to the scene
         self.parent = parent;
         
+        // Create the grid sprites
+        self.gridSprite = [SKSpriteNode spriteNodeWithImageNamed:@"DefaultBackgroundGrid.png"];
+        self.gridSprite.anchorPoint = CGPointMake(0, 0.5);
+        self.gridSprite.position = CGPointMake(0,[UIScreen mainScreen].bounds.size.width/2);
+        [parent addChild:self.gridSprite];
+        
+        // Second grid
+        self.gridSprite2 = [SKSpriteNode spriteNodeWithImageNamed:@"DefaultBackgroundGrid.png"];
+        self.gridSprite2.anchorPoint = CGPointMake(0, 0.5);
+        self.gridSprite2.position = CGPointMake(self.gridSprite.position.x + self.gridSprite.size.width, [UIScreen mainScreen].bounds.size.width/2);
+        [parent addChild:self.gridSprite2];
+        
         // Get shared instance of the game class
         self.game = [GameData sharedInstance];
         
@@ -32,9 +44,9 @@
         // There are 8 onscreen grid columns + 1 offscreen for block spawning
         // There are 3 rows for each column
         // We will add 9 empty arrays to each array index to create a 2 dimentional array to hold our blocks
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 8; i++) {
             // Create an empty array for the 2nd dimension
-            NSMutableArray *column = [[NSMutableArray alloc]init];
+            NSMutableArray *column = [[NSMutableArray alloc] init];
             
             // Add 3 Empty blocks to the array
             for (int i = 0; i < 3; i++) {
@@ -45,12 +57,29 @@
             // Add the column into the grid array
             [self.blockArray addObject:column];
         }
-        
-        // Create the move action to move the blocks by 1 square
-        self.moveBlocks = [SKAction moveByX:-self.game.squareSize y:0 duration:self.game.moveSpeed];
+
     }
     
     return self;
+}
+
+-(void)moveGridSprites:(float)deltaTime{
+    //Moves the grids by multiplying the game speed by delta time
+        // Grid 1
+    self.gridSprite.position = CGPointMake(self.gridSprite.position.x - (self.game.moveSpeed * deltaTime), self.gridSprite.position.y);
+        // Grid 2
+    self.gridSprite2.position = CGPointMake(self.gridSprite2.position.x - (self.game.moveSpeed * deltaTime), self.gridSprite2.position.y);
+    
+    // Reposition grid if offscreen
+        // Grid 1
+    if (self.gridSprite.position.x <= -self.gridSprite.size.width) {
+        self.gridSprite.position = CGPointMake(self.gridSprite2.position.x + self.gridSprite.size.width , self.gridSprite.position.y);
+    }
+        // Grid 2
+    if (self.gridSprite2.position.x <= -self.gridSprite2.size.width) {
+        self.gridSprite2.position = CGPointMake(self.gridSprite.position.x + self.gridSprite2.size.width, self.gridSprite2.position.y);
+    }
+    
 }
 
 -(void)spawnColumn{
@@ -98,17 +127,9 @@
     
     // Add the new column to the array
     [self.blockArray addObject:newColumn];
-    newColumn = nil;
 }
 
--(void)moveBlocksLeft{
-    
-    // Remove the first index so all columns shift left
-    [self.blockArray removeObjectAtIndex:0];
-    
-    // Spawn a new column of blocks
-    [self spawnColumn];
-    
+-(void)moveBlocksLeft:(float)deltaTime{    
     // Iterate over all the columns in the array
     for (NSMutableArray *column in self.blockArray) {
         // Iterate over all the blocks in each column
@@ -116,9 +137,9 @@
             // if the block is not empty
             if ([block.blockColor caseInsensitiveCompare:@"Empty"] != NSOrderedSame){
                 // If it's movable
-                if(!block.isUnMovable){
+                if(block.isMovable){
                     // Move the block left
-                    [block.blockImage runAction:self.moveBlocks];
+                    [block onUpdate:deltaTime];
                 }
             }
         }
@@ -197,6 +218,16 @@
         [self.blockBag addObject:block];
         
     }
+}
+
+-(void)completedMove{
+    // Remove the column in the match box
+    [self.blockArray removeObjectAtIndex:0];
+    
+    // Spawn a new column
+    [self spawnColumn];
+    
+    
 }
 
 @end

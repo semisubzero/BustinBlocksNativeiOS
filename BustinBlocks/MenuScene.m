@@ -33,17 +33,6 @@
         self.backgroundSprite2.anchorPoint = CGPointMake(0, 0);
         self.backgroundSprite2.position = CGPointMake(self.backgroundSprite.size.width, 0);
         [self addChild:self.backgroundSprite2];
-        
-        // Move left actions
-        SKAction *bg1_move = [SKAction moveByX:self.backgroundSprite.position.x - 480 y:0 duration:self.backgroundMoveSpeed];
-        SKAction *bg2_move = [SKAction moveByX:self.backgroundSprite2.position.x - 480 y:0 duration:self.backgroundMoveSpeed];
-        
-        SKAction *bg1_scroll = [SKAction repeatActionForever:bg1_move];
-        SKAction *bg2_scroll = [SKAction repeatActionForever:bg2_move];
-        
-        //[self.backgroundSprite runAction:bg1_scroll];
-        //[self.backgroundSprite2 runAction:bg2_scroll];
-        
     }
     return self;
 }

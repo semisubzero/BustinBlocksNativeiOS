@@ -9,9 +9,11 @@
 #import <SpriteKit/SpriteKit.h>
 
 @class GameData;
+@class Grid;
 
 @interface GameScene : SKScene
 
+@property Grid *grid;
 @property SKSpriteNode *gridSprite;
 @property SKSpriteNode *gridSprite2;
 
@@ -19,6 +21,6 @@
 
 @property GameData *game;
 
--(void)moveLeft;
+@property float lastFrameTime;
 
 @end

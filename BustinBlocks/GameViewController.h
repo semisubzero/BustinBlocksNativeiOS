@@ -7,18 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-@class Grid;
 @class GameScene;
 @class Block;
 
 @interface GameViewController : UIViewController
 
-@property Grid *grid;
 @property GameScene *scene;
-@property NSTimer *timer;
 @property Block *activeBlock;
-
-
--(void)moveLeft;
 
 @end

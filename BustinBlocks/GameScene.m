@@ -9,6 +9,7 @@
 #import "GameScene.h"
 #import "GameData.h"
 #import "Block.h"
+#import "Grid.h"
 
 @implementation GameScene
 
@@ -18,41 +19,40 @@
         // Get the shared instance of our game data
         self.game = [GameData sharedInstance];
         
-        // Create the background grids
-        self.gridSprite = [SKSpriteNode spriteNodeWithImageNamed:@"DefaultBackgroundGrid.png"];
-        self.gridSprite.anchorPoint = CGPointMake(0, 0.5);
-        self.gridSprite.position = CGPointMake(0,size.width/2);
-        [self addChild:self.gridSprite];
-        
-        // Second grid
-        self.gridSprite2 = [SKSpriteNode spriteNodeWithImageNamed:@"DefaultBackgroundGrid.png"];
-        self.gridSprite2.anchorPoint = CGPointMake(0, 0.5);
-        self.gridSprite2.position = CGPointMake(self.gridSprite.position.x + self.gridSprite.size.width, size.width/2);
-        [self addChild:self.gridSprite2];
-        
-        // Setup the move left actions
-        self.moveSpritesLeft = [SKAction moveByX:-self.game.squareSize y:0 duration:self.game.moveSpeed];
-        
+        // Create grid class
+        self.grid = [[Grid alloc] initWithParent:self];
     }
     return self;
 }
 
--(void)moveLeft{
-    [self.gridSprite runAction:self.moveSpritesLeft completion:^{
-        if (self.gridSprite.position.x <= -self.gridSprite.size.width+1) {
-            self.gridSprite.position = CGPointMake(self.gridSprite.size.width, 160);
-        }
-    }];
-    [self.gridSprite2 runAction:self.moveSpritesLeft completion:^{
-        if (self.gridSprite2.position.x <= -self.gridSprite2.size.width+1) {
-            self.gridSprite2.position = CGPointMake(self.gridSprite2.size.width, 160);
-        }
-    }];
-}
-
 -(void)update:(CFTimeInterval)currentTime {
-    /* Called before each frame is rendered */
-    NSLog(@"%d",currentTime);
+    // Initial frame time setup
+    if (!self.lastFrameTime) {
+        self.lastFrameTime = currentTime;
+    }
+    // Get Delta time
+    float deltaTime = currentTime - self.lastFrameTime;
+
+//** Update Methods Begin **//
+    
+    // Update the grid
+    [self.grid moveGridSprites:deltaTime];
+    // Move the blocks if they're movable
+    [self.grid moveBlocksLeft:deltaTime];
+    // Increment the grid offset
+    [self.game incrementOffset:deltaTime];
+    
+    // Check to see if offset completed a movement
+    if (self.game.gridOffset >= self.game.squareSize){
+        // Reset the offset to zero
+        self.game.gridOffset = 0;
+        // Do everything that happens on a completed move
+        [self.grid completedMove];
+    }    
+    
+//** Update Methods End **//
+    
+    self.lastFrameTime = currentTime;
 }
 
 @end

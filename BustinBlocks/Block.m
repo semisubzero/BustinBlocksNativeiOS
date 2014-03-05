@@ -7,7 +7,7 @@
 //
 
 #import "Block.h"
-#import <SpriteKit/SpriteKit.h>
+#import "GameData.h"
 
 @implementation Block
 
@@ -33,6 +33,8 @@
         
         self.blockColor = color;
         self.blockStyle = style;
+        
+        self.isMovable = true;
     }
     
     return self;
@@ -49,17 +51,22 @@
 }
 
 -(void)isTouched{
-    self.isUnMovable = true;
+    self.isMovable = false;
     [self.blockImage removeAllActions];
     [self.blockImage runAction:self.scaleUpAction];
     
 }
 
 -(void)isLetGo{
-    self.isUnMovable = false;
+    self.isMovable = true;
     [self.blockImage removeAllActions];
     [self.blockImage runAction:self.scaleDownAction];
     
+}
+
+-(void)onUpdate:(float)deltaTime{
+    GameData *game = [GameData sharedInstance];
+    self.blockImage.position = CGPointMake(self.blockImage.position.x - (game.moveSpeed * deltaTime), self.blockImage.position.y);
 }
 
 +(NSArray *)validColors{
